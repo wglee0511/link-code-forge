@@ -75,8 +75,22 @@
 
     if (!contentRoot || !doc) {
       if (contentRoot) {
+        const keys = window.SPOT_STAPLER_LEGAL
+          ? Object.keys(window.SPOT_STAPLER_LEGAL).join(", ")
+          : "(SPOT_STAPLER_LEGAL undefined)";
+        const langKeys =
+          window.SPOT_STAPLER_LEGAL && window.SPOT_STAPLER_LEGAL[docType]
+            ? Object.keys(window.SPOT_STAPLER_LEGAL[docType]).join(", ")
+            : "(none)";
         contentRoot.innerHTML =
-          "<p>Content is not available for the selected language.</p>";
+          "<p>Content is not available for the selected language.</p>" +
+          "<pre style='font-size:12px;white-space:pre-wrap'>" +
+          "path=" + window.location.pathname + "\n" +
+          "docType=" + docType + "\n" +
+          "currentLang=" + currentLang + "\n" +
+          "top-level keys=" + keys + "\n" +
+          docType + " lang keys=" + langKeys +
+          "</pre>";
       }
       return;
     }
