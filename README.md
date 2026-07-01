@@ -22,6 +22,7 @@
 | Spot Stapler | `spotStapler/index.html` | http://localhost:8080/spotStapler/ |
 | 이용약관 | `spotStapler/term/index.html` | http://localhost:8080/spotStapler/term |
 | 개인정보 처리방침 | `spotStapler/privacy/index.html` | http://localhost:8080/spotStapler/privacy |
+| 고객 지원 | `spotStapler/support/index.html` | http://localhost:8080/spotStapler/support |
 
 ## 구조
 
@@ -88,7 +89,12 @@ GitHub 저장소 `Settings → Pages`에서 Custom domain 확인 후, 인증서 
 
 - `https://spotstapler.app/term`
 - `https://spotstapler.app/privacy`
+- `https://spotstapler.app/support`
 
 `spotstapler.app` 도메인에는 **`spotStapler/` 폴더 내용을 사이트 루트**로 배포합니다.
 
-이 저장소 전체를 하나의 도메인에 배포할 경우 경로는 `/spotStapler/term`, `/spotStapler/privacy` 입니다.
+이 저장소 전체를 하나의 도메인(`link.getcodeforge.dev`)에 배포할 경우 경로는 `/spotStapler/term`, `/spotStapler/privacy`, `/spotStapler/support` 입니다.
+
+### 고객 지원 (앱스토어 지원 URL)
+
+`support/index.html`은 App Store·Google Play 심사에서 요구하는 지원 URL 용도입니다. 문의 이메일(`admin@getcodeforge.dev`)과 알림·구독·환불 관련 FAQ를 5개 언어로 제공합니다. 콘텐츠는 `js/support-content.js`에 있습니다.
