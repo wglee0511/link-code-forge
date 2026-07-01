@@ -23,6 +23,7 @@
   function getDocType() {
     const path = window.location.pathname;
     if (path.includes("/privacy")) return "privacy";
+    if (path.includes("/support")) return "support";
     if (path.includes("/term")) return "terms";
     return "terms";
   }
@@ -87,7 +88,7 @@
     if (docTypeLabel) docTypeLabel.textContent = doc.docLabel;
 
     const otherLink = document.getElementById("other-doc-link");
-    if (otherLink) {
+    if (otherLink && (docType === "terms" || docType === "privacy")) {
       const otherType = docType === "terms" ? "privacy" : "terms";
       const otherDoc = window.SPOT_STAPLER_LEGAL[otherType][currentLang];
       otherLink.href = getSiblingDocUrl(otherType);
